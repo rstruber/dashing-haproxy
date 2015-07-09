@@ -7,6 +7,8 @@
   :pxname_exclude:
   :pxname_include:
   :svname_exclude:
+    - 'backend'
+	- 'frontend'
   :svname_include:
   :critical: 50.0
   :warning: 75.0
