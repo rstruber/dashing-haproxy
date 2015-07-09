@@ -15,6 +15,7 @@ A dashing widget to display the status of haproxy backends
 2. Copy jobs/haproxy.rb in your jobs folder
 3. Copy jobs/dashboards/haproxy.erb in your dashboards folder
 4. Copy and update config.yml to your project root
+5. Restart dashing
 
 ## Configuration
 
