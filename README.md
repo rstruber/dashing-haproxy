@@ -6,8 +6,8 @@ A dashing widget to display the status of haproxy backends
 
 ## Preview
 
-![Preview - no hosts down](/blob/master/Preview.png)
-![Preview - Host in maintenance](/blob/master/PreviewMaintenance.png)
+![Preview - no hosts down](https://github.com/rstruber/dashing-haproxy/blob/master/Preview.png)
+![Preview - Host in maintenance](https://github.com/rstruber/dashing-haproxy/blob/master/PreviewMaintenance.png)
 
 ## Install
 
@@ -18,4 +18,27 @@ A dashing widget to display the status of haproxy backends
 
 ## Configuration
 
+Using the config file you can include and/or exclude individual processes and servers from the haproxy status page.
 
+pxname - Proxy name. The first column in csv status. The name associated to the bind/listen directive.
+svname - Server name. The second column in csv status. The label for the backend/server. Can use this to filter "total" rows from results for dashboard.
+
+* instances - Hash of instances where the key is a label used for display and the value is the full url at which the status page for each haproxy instance may be reached
+* username - Authenticated user to access status page with
+* password - Authenticated user's password
+* pxname\_exclude - proxy names to not include in overall status
+* pxname\_include - proxy names to specifically include in status
+* svname\_exclude - server names to not include in overall status
+* svname\_include - server names to specifically include in status
+* critical - Percent value (e.g. 50) to set percent up tile's background color as red
+* warning - Percent value (e.g. 90) to set percent up tile's background color as yellow
+* red - A hex color code for the percent up tile css-background when percentage is below :critical (default #C44435)
+* yellow - A hex color code for the percent up tile css-background when percentage is below :warning (default #E2CF6A)
+* green - A hex color code for the percent up tile css-background when percentage is above :warning (default #96bf48)
+
+N.B. Includes/Excludes are evaluated as follows:
+
+1. Pxname and svname are processed independently. Pxname is evaluated first then svname.
+2. If includes and excludes are defined - effectively the same as only defining includes - name must be in include and must not be in exclude
+3. If only includes are defined - name must be in include list
+4. If only excludes are defined - name must not be in exclude list
