@@ -1,0 +1,21 @@
+<% content_for :title do %>HAProxy Status<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="haproxy-percent" data-view="Meter" data-title="Percent Up" data-min="0" data-max="100"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="haproxy-up" data-view="Number" data-title="Up"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="haproxy-down" data-view="Number" data-title="Down"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="haproxy-sessions" data-view="Number" data-title="Current Sessions"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="4" data-sizey="2">
+      <div data-id="haproxy-down-hosts" data-view="HaproxyDownHosts" data-title="Down Hosts"></div>
+    </li>
+  </ul>
+</div>

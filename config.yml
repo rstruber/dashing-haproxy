@@ -1,0 +1,12 @@
+:haproxy:
+  :instances:
+    'ha1': 'http://ha1.url.to.status.page'
+    'ha2': 'http://ha2.url.to.status.page'
+  :username: 'stats_user'
+  :password: 'stats_password'
+  :pxname_exclude:
+  :pxname_include:
+  :svname_exclude:
+  :svname_include:
+  :critical: 50.0
+  :warning: 75.0
