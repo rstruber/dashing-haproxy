@@ -16,8 +16,9 @@ A dynamic widget (HaproxyDownHosts) also displays tiles for each "not up" host i
 1. Copy widgets/haproxy\_down\_hosts in your widgets folder
 2. Copy jobs/haproxy.rb in your jobs folder
 3. Copy jobs/dashboards/haproxy.erb in your dashboards folder
-4. Copy and update config.yml to your project root
-5. Restart dashing
+4. Copy config.yml.haproxy-example to config.yml to your project root
+5. Update config.yml with setting appropriate for your environment
+6. Restart dashing
 
 ## Configuration
 
