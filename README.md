@@ -2,9 +2,11 @@
 
 ## Description
 
-A configurable dashing dashboard, widget, and job to display the overall status of your haproxy cluster.
+A configurable [Dashing][1] dashboard, widget, and job to display the overall status of your haproxy cluster.
 
 A dynamic widget (HaproxyDownHosts) also displays tiles for each "not up" host in your included backends. A host in maintenance appears in a different color than a host that is down for another reason (like a failed health check).
+
+[1]: https://github.com/Shopify/dashing "Dashing"
 
 ## Preview
 
