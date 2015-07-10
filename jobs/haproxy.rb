@@ -155,6 +155,7 @@ SCHEDULER.every '5s', first_in: '5s', allow_overlapping: false do |job|
           svname: svname,
           status: row[17],
           downtime: row[23],
+          sessions: row[4],
         })
       end
     end

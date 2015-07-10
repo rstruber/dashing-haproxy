@@ -20,7 +20,7 @@ class Dashing.HaproxyDownHosts extends Dashing.Widget
       widget = grid.find('li[id="'+id+'"]')
 
       if !widget.length
-        widget = gridster.add_widget('<li id="'+id+'"><div class="widget widget-haproxy-down-host"><h1 id="host"></h1><p id="svname"></p><p id="status"></p><p id="downtime"><span></span>s</p></div></li>');
+        widget = gridster.add_widget('<li id="'+id+'"><div class="widget widget-haproxy-down-host"><h1 id="host"></h1><p id="svname"></p><p id="status"></p><p id="downtime"><span></span>s</p><p id="sessions">Sessions: <span></span></p></div></li>');
         widget.find('#host').text(host.label)
         widget.find('#svname').text(host.svname)
       else
@@ -28,6 +28,7 @@ class Dashing.HaproxyDownHosts extends Dashing.Widget
 
       widget.find('#status').text(host.status)
       widget.find('#downtime span').text(host.downtime)
+      widget.find('#sessions span').text(host.sessions)
 
       if host.status == 'MAINT'
         widget.css( "background-color", "#BC4B8C" );
