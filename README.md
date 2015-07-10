@@ -36,8 +36,8 @@ svname - Server name. The second column in csv status. The label for the backend
 * pxname\_include - proxy names to specifically include in status
 * svname\_exclude - server names to not include in overall status
 * svname\_include - server names to specifically include in status
-* critical - Percent value (e.g. 50) to set percent up tile's background color as red
-* warning - Percent value (e.g. 90) to set percent up tile's background color as yellow
+* critical - Percent value as a float (e.g. 50.0) to set percent up tile's background color as red
+* warning - Percent value as a float (e.g. 90.0) to set percent up tile's background color as yellow
 * red - A hex color code for the percent up tile css-background when percentage is below :critical (default #C44435)
 * yellow - A hex color code for the percent up tile css-background when percentage is below :warning (default #E2CF6A)
 * green - A hex color code for the percent up tile css-background when percentage is above :warning (default #96bf48)
