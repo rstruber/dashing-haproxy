@@ -11,6 +11,7 @@ config[:red] ||= "#C44435"
 
 overall = Hash.new
 overall[:sessions_prev] = 0
+overall[:queue_prev] = 0
 
 
 SCHEDULER.every '5s', first_in: '5s', allow_overlapping: false do |job|
@@ -21,6 +22,7 @@ SCHEDULER.every '5s', first_in: '5s', allow_overlapping: false do |job|
   overall[:total] = 0
   overall[:up_percent] = 0
   overall[:sessions] = 0
+  overall[:queue] = 0
   overall[:color] = ''
 
   config[:instances].each { |label, instance|
@@ -143,6 +145,7 @@ SCHEDULER.every '5s', first_in: '5s', allow_overlapping: false do |job|
 
       overall[:total] = overall[:total] + 1
       overall[:sessions] = overall[:sessions] + row[4].to_i
+      overall[:queue] = overall[:queue] + row[2].to_i
 
       if row[17].downcase == 'up'
         overall[:up_count] = overall[:up_count] + 1
@@ -156,6 +159,7 @@ SCHEDULER.every '5s', first_in: '5s', allow_overlapping: false do |job|
           status: row[17],
           downtime: row[23],
           sessions: row[4],
+          queue: row[2],
         })
       end
     end
@@ -175,7 +179,9 @@ SCHEDULER.every '5s', first_in: '5s', allow_overlapping: false do |job|
   send_event("haproxy-up", { current: overall[:up_count] })
   send_event("haproxy-down", { current: overall[:down_count] })
   send_event("haproxy-sessions", { current: overall[:sessions], last: overall[:sessions_prev] })
+  send_event("haproxy-queue", { current: overall[:queue], last: overall[:queue_prev] })
   send_event("haproxy-down-hosts", hosts: overall[:down_hosts])
 
   overall[:sessions_prev] = overall[:sessions]
+  overall[:queue_prev] = overall[:queue]
 end

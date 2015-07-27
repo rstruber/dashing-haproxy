@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  $(function() {
+    Dashing.widget_base_dimensions = [300, 320]
+    Dashing.numColumns = 5
+  });
+</script>
+
 <% content_for :title do %>HAProxy Status<% end %>
 <div class="gridster">
   <ul>
@@ -12,6 +19,9 @@
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="haproxy-sessions" data-view="Number" data-title="Current Sessions"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="haproxy-queue" data-view="Number" data-title="Current Queue"></div>
     </li>
 
     <li data-row="2" data-col="1" data-sizex="4" data-sizey="2">

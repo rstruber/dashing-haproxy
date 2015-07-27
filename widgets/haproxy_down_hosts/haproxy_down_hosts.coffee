@@ -1,5 +1,5 @@
 class Dashing.HaproxyDownHosts extends Dashing.Widget
-  width = 4
+  width = 5
 
   ready: ->
     $(@node).find('.gridster ul').gridster({
